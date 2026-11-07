@@ -2,7 +2,13 @@
 
 ![Bodas de Esmeralda — M & L](public/img/banner.webp)
 
-Site estático do convite das **Bodas de Esmeralda (40 anos) de Mirandir & Luiza** — 29/11/2026, 10h30, Espaço Carrier, Mairiporã/SP.
+Site estático do convite das **Bodas de Esmeralda (40 anos) de Mirandir & Luiza**.
+
+## Por que este site existe
+
+Quem já organizou festa grande conhece o roteiro: os sites prontos de casamento são todos meio iguais — mesmo layout, mesmos campos, quase nenhum espaço pra deixar as coisas com a nossa cara. No fim, parecia tudo mais do mesmo. E 40 anos de história mereciam mais do que isso.
+
+Foi daí que nasceu a ideia: em vez de espremer a nossa festa num template, construir do zero uma experiência só nossa — com a nossa história, a nossa estética (a estampa africana que é a cara da celebração), o mural de recados, a confirmação de presença e cada detalhe do jeito que a gente imaginou. Um site que não parece um convite genérico, e sim a nossa casa aberta para os convidados.
 
 > **Status:** confirmações de presença (RSVP) **encerradas em 06/11/2026** — o site exibe um aviso no topo orientando a procurar por Luane. A branch `main` preserva a versão funcional **v1.15.10** (RSVP aberto); o encerramento vive em `release/rsvp-encerrado-v1.15.11` (**v1.15.11**). Rodapé exibe a versão (`src/js/config.js`).
 
@@ -31,9 +37,13 @@ python -m http.server 8000
 
 ## Arquitetura
 
-Diagrama interativo gerado com [archify](https://github.com/browser-use/browser-harness) a partir do código:
+Diagrama interativo gerado com archify a partir do código — **rodando live**:
 
-👉 **[docs/arquitetura.html](docs/arquitetura.html)** (abrir o arquivo — no GitHub web, baixe e abra localmente para interatividade total)
+👉 **[Abrir arquitetura interativa](https://llopes-86.github.io/site-bodas-de-esmeralda/arquitetura.html)**
+
+[![Arquitetura do site](docs/arquitetura-preview.png)](https://llopes-86.github.io/site-bodas-de-esmeralda/arquitetura.html)
+
+*(Arquivo também disponível em [`docs/arquitetura.html`](docs/arquitetura.html) para abrir localmente.)*
 
 Fluxo em resumo: visitante → **nginx** (estático + CSP + rate-limit) → páginas; o JS chama **PocketBase** via `/api/pb` (RSVP/mural) e **Umami** via `/a/t`; CDNs servem fontes/ícones/mapas; a cada RSVP, um hook dispara **Gotify**.
 
@@ -43,7 +53,7 @@ Fluxo em resumo: visitante → **nginx** (estático + CSP + rate-limit) → pág
 - [x] Mural com moderação (`Pendente` → `Aprovado`), Pix/QR, countdown, a11y
 - [x] Encerramento do RSVP com aviso reversível (`hidden`), v1.15.11
 - [ ] Página de confirmação pós-evento (fotos da festa)
-- [ ] GitHub Pages como espelho estático
+- [x] GitHub Pages servindo a arquitetura interativa (`docs/`)
 
 ## Deploy
 
