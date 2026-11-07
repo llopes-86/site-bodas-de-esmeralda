@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <!-- CSP definida no servidor (nginx/security-headers.conf) -->
+    <meta name="description" content="Mural de Mensagens - Bodas de Esmeralda M & L. Deixe seu recado e leia todas as mensagens de carinho.">
+    <title>Mural de Mensagens - M & L</title>
+    <link rel="icon" href="./public/img/akoma.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous"></noscript>
+    <link rel="stylesheet" href="./src/css/main.css">
+</head>
+<body>
+    <a class="skip-link" href="#conteudo">Pular para conteúdo</a>
+
+    <audio id="bg-music" loop preload="none">
+        <source src="./public/media/andanca-beth-carvalho.mp3" type="audio/mpeg">
+    </audio>
+
+    <header class="navbar scrolled" id="navbar">
+        <div class="container nav-inner">
+            <div class="logo"><a href="/" class="nav-logo"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>M&L</a></div>
+            <nav class="nav-menu desktop-menu" aria-label="Navegação principal">
+                <a href="/" data-back><i aria-hidden="true" class="fas fa-arrow-left"></i> Voltar ao Início</a>
+                <a href="galeria">Ver Álbum</a>
+                <a href="/#rsvp" class="rsvp-link">Confirmar Presença</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="music-btn" class="music-control-nav" aria-label="Tocar Música"><i aria-hidden="true" class="fas fa-play"></i></button>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Abrir Menu" aria-expanded="false" aria-controls="nav-mobile"><i aria-hidden="true" class="fas fa-bars"></i></button>
+            </div>
+        </div>
+        <nav class="nav-mobile" id="nav-mobile" aria-label="Menu móvel">
+            <a href="/" data-back><i aria-hidden="true" class="fas fa-arrow-left"></i> Voltar ao Início</a>
+            <a href="galeria">Ver Álbum</a>
+            <a href="/#rsvp" class="rsvp-link">Confirmar Presença</a>
+        </nav>
+    </header>
+
+    <section class="mural-section reveal mural-full" id="conteudo" tabindex="-1">
+        <div class="container text-center">
+            <h2 class="section-title gold-shimmer">Todos os Recados</h2>
+            <div class="section-divider"></div>
+            <p class="mural-full-desc">Reviva cada palavra de carinho que recebemos para celebrar as nossas bodas de esmeralda.</p>
+
+            <div class="text-center mural-full-cta">
+                <a href="/#mensagens" class="btn-primary mural-write-btn">
+                    <i aria-hidden="true" class="fas fa-pen"></i> Deixe sua mensagem para o casal
+                </a>
+            </div>
+
+            <h3 class="mural-subtitle">Mural Completo</h3>
+            <p class="mural-full-count"><span id="msg-count">0</span></p>
+            <p class="mural-click-hint">Clique em uma mensagem para ler por inteiro</p>
+
+            <div id="mural-container" class="mural-grid">
+                <p><i aria-hidden="true" class="fas fa-spinner fa-spin"></i> Carregando mensagens...</p>
+            </div>
+        </div>
+    </section>
+
+    <script type="module" src="./src/js/pages/mural.js"></script>
+</body>
+</html>

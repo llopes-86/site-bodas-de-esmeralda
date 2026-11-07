@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <!-- CSP definida no servidor (nginx/security-headers.conf) -->
+    <meta name="description" content="Bodas de Esmeralda - M & L celebram 40 anos de amor. Confirme sua presença e participe deste momento especial.">
+    <title>Bodas de Esmeralda - M & L</title>
+    <link rel="icon" href="./public/img/akoma.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preload" as="image" href="./public/img/banner.webp" type="image/webp" media="(min-width: 481px)" fetchpriority="high">
+    <link rel="preload" as="image" href="./public/img/banner_mobile.webp" type="image/webp" media="(max-width: 480px)" fetchpriority="high">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous"></noscript>
+    <link rel="stylesheet" href="./src/css/main.css">
+</head>
+<body>
+    <a class="skip-link" href="#conteudo">Pular para conteúdo</a>
+
+    <div id="splash" class="splash">
+        <div class="splash-pattern"></div>
+        <div class="splash-content">
+            <i aria-hidden="true" class="fas fa-gem splash-gem"></i>
+            <h1 class="splash-names gold-shimmer">M & L</h1>
+            <p class="splash-sub">Bodas de Esmeralda · 40 Anos</p>
+            <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+        </div>
+    </div>
+
+    <audio id="bg-music" loop preload="none">
+        <source src="./public/media/andanca-beth-carvalho.mp3" type="audio/mpeg">
+    </audio>
+
+    <header class="navbar" id="navbar">
+        <div class="container nav-inner">
+            <div class="logo">
+                <a href="#inicio" class="nav-logo"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>M&L</a>
+            </div>
+            <nav class="nav-menu desktop-menu" aria-label="Navegação principal">
+                <a href="#inicio">Início</a>
+                <a href="#historia">História</a>
+                <a href="#fotos">Fotos</a>
+                <a href="#evento">O Evento</a>
+                <a href="#mensagens">Mural</a>
+                <a href="#rsvp">RSVP</a>
+                <a href="#presentes">Presentes</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="music-btn" class="music-control-nav" aria-label="Tocar Música"><i aria-hidden="true" class="fas fa-play"></i></button>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Abrir Menu" aria-expanded="false" aria-controls="nav-mobile"><i aria-hidden="true" class="fas fa-bars"></i></button>
+            </div>
+        </div>
+        <nav class="nav-mobile" id="nav-mobile" aria-label="Menu móvel">
+            <a href="#inicio">Início</a>
+            <a href="#historia">História</a>
+            <a href="#fotos">Fotos</a>
+            <a href="#evento">O Evento</a>
+            <a href="#mensagens">Mural</a>
+            <a href="#rsvp">RSVP</a>
+            <a href="#presentes">Presentes</a>
+        </nav>
+    </header>
+
+    <section class="hero-title-area african-pattern" id="conteudo" tabindex="-1">
+        <div class="container text-center">
+            <div class="hero-title-divider">
+                <span class="hero-divider-line hero-divider-left"></span>
+                <span class="hero-title gold-shimmer">Mirandir</span>
+                <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 100 100" fill="currentColor" class="hero-heart"><path d="M50 88 C25 65 10 50 10 35 C10 20 22 10 35 10 C42 10 48 14 50 18 C52 14 58 10 65 10 C78 10 90 20 90 35 C90 50 75 65 50 88Z"/></svg>
+                <span class="hero-title gold-shimmer">Luiza</span>
+                <span class="hero-divider-line hero-divider-right"></span>
+            </div>
+        </div>
+    </section>
+
+    <section id="inicio" class="hero african-pattern">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content reveal">
+
+            <div class="countdown" id="countdown" role="timer" aria-label="Contagem regressiva para 29 de novembro de 2026 às 10h30" aria-live="off" aria-atomic="true">
+                <div class="count-box"><span id="days">00</span><span class="count-label">Dias</span></div>
+                <div class="count-box"><span id="hours">00</span><span class="count-label">Horas</span></div>
+                <div class="count-box"><span id="minutes">00</span><span class="count-label">Min</span></div>
+                <div class="count-box"><span id="seconds">00</span><span class="count-label">Seg</span></div>
+            </div>
+            <p id="countdown-status" class="visually-hidden" role="status" aria-live="polite">Contagem regressiva para 29 de novembro de 2026.</p>
+            <a href="#rsvp" class="btn-primary btn-hero-rsvp">Confirmar Presença</a>
+            <div class="hero-scroll-hint">
+                <span>Navegue pelo site</span>
+                <i aria-hidden="true" class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <section id="historia" class="historia reveal african-pattern">
+        <div class="container text-center">
+            <h2 class="section-title gold-shimmer">Nossa História</h2>
+            <div class="section-divider"></div>
+            <div class="historia-text">
+                <p class="historia-quote">A filósofa africana Sobonfu Somé diz que o relacionamento amoroso é a união de dois espíritos para subir a montanha da vida.</p>
+                <div class="historia-separator"></div>
+                <p>No dia 29/11/2026, Mirandir e Luiza, Mi e Du, completam 40 anos do compromisso de subirem juntos a montanha da vida. O que começou em um encontro na biblioteca da faculdade, fortaleceu-se com a união das famílias, e construiu histórias memoráveis.</p>
+                <p>Hoje, com o coração transbordando gratidão, convidamos você para celebrar a solidez desta união. Assim como a esmeralda, este amor é raro, precioso e continua brilhando intensamente. Venha celebrar as bodas de esmeralda de Mirandir e Luiza conosco!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="fotos" class="fotos reveal">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title gold-shimmer">Momentos Inesquecíveis</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="gallery-slideshow" id="gallery-grid" role="region" aria-roledescription="carrossel" aria-label="Fotos do casal">
+                <div class="slideshow-track">
+                    <div class="gallery-item slideshow-slide active" tabindex="0" role="button" aria-label="Ampliar foto 1 do casal"><img src="./public/img/inicio/1.webp" srcset="./public/img/inicio/1-480.webp 480w, ./public/img/inicio/1-800.webp 800w, ./public/img/inicio/1.webp 1200w" sizes="(max-width: 560px) 100vw, 560px" width="1200" height="800" decoding="async" alt="Foto 1 do casal" loading="lazy"><div class="gallery-overlay"><i aria-hidden="true" class="fas fa-search-plus"></i></div></div>
+                    <div class="gallery-item slideshow-slide" tabindex="0" role="button" aria-label="Ampliar foto 2 do casal"><img src="./public/img/inicio/2.webp" srcset="./public/img/inicio/2-480.webp 480w, ./public/img/inicio/2-800.webp 800w, ./public/img/inicio/2.webp 1200w" sizes="(max-width: 560px) 100vw, 560px" width="1200" height="800" decoding="async" alt="Foto 2 do casal" loading="lazy"><div class="gallery-overlay"><i aria-hidden="true" class="fas fa-search-plus"></i></div></div>
+                    <div class="gallery-item slideshow-slide" tabindex="0" role="button" aria-label="Ampliar foto 3 do casal"><img src="./public/img/inicio/3.webp" srcset="./public/img/inicio/3-480.webp 480w, ./public/img/inicio/3-800.webp 800w, ./public/img/inicio/3.webp 800w" sizes="(max-width: 560px) 100vw, 560px" width="800" height="1200" decoding="async" alt="Foto 3 do casal" loading="lazy"><div class="gallery-overlay"><i aria-hidden="true" class="fas fa-search-plus"></i></div></div>
+                    <div class="gallery-item slideshow-slide" tabindex="0" role="button" aria-label="Ampliar foto 4 do casal"><img src="./public/img/inicio/4.webp" srcset="./public/img/inicio/4-480.webp 480w, ./public/img/inicio/4-800.webp 800w, ./public/img/inicio/4.webp 1200w" sizes="(max-width: 560px) 100vw, 560px" width="1200" height="800" decoding="async" alt="Foto 4 do casal" loading="lazy"><div class="gallery-overlay"><i aria-hidden="true" class="fas fa-search-plus"></i></div></div>
+                </div>
+                <button type="button" class="slideshow-prev" aria-label="Foto anterior" aria-controls="gallery-grid"><i aria-hidden="true" class="fas fa-chevron-left"></i></button>
+                <button type="button" class="slideshow-next" aria-label="Próxima foto" aria-controls="gallery-grid"><i aria-hidden="true" class="fas fa-chevron-right"></i></button>
+                <div class="slideshow-dots" role="tablist" aria-label="Escolher foto">
+                    <button type="button" class="dot active" role="tab" aria-selected="true" aria-label="Ir para foto 1"></button>
+                    <button type="button" class="dot" role="tab" aria-selected="false" aria-label="Ir para foto 2" tabindex="-1"></button>
+                    <button type="button" class="dot" role="tab" aria-selected="false" aria-label="Ir para foto 3" tabindex="-1"></button>
+                    <button type="button" class="dot" role="tab" aria-selected="false" aria-label="Ir para foto 4" tabindex="-1"></button>
+                </div>
+            </div>
+            <div class="text-center gallery-cta">
+                <a href="galeria" class="btn-outline"><i aria-hidden="true" class="far fa-images"></i> Ver Álbum Completo</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="evento" class="evento reveal african-pattern">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title gold-shimmer">O Evento</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="dress-code reveal">
+                <i aria-hidden="true" class="fas fa-tshirt dress-code-icon"></i>
+                <h3>Dress Code</h3>
+                <p>Nossa celebração será inspirada na riqueza e na beleza das tradições africanas. Para harmonizar esse momento, sugerimos o uso de estampas étnicas ou africanas, seja em uma peça de roupa ou em um acessório.</p>
+                <p>Sinta-se à vontade para interpretar essa proposta do seu jeito. O essencial é estar confortável, elegante e preparado(a) para celebrar esse dia tão especial conosco.</p>
+            </div>
+
+            <div class="evento-layout">
+                <div class="evento-info">
+                    <h3>Espaço Carrier</h3>
+                    <p class="evento-quote">"Um lugar especial para um dia inesquecível"</p>
+                    <div class="evento-card">
+                        <div class="evento-row"><i aria-hidden="true" class="far fa-calendar-alt"></i><div><h4>Data</h4><p>29 de Novembro de 2026</p></div></div>
+                        <div class="evento-row"><i aria-hidden="true" class="far fa-clock"></i><div><h4>Horário</h4><p>10:30</p></div></div>
+                        <div class="evento-row"><i aria-hidden="true" class="fas fa-map-marker-alt"></i><div><h4>Local</h4><p>Estr. Ari Antonio Lopes De Carvalho, 674<br>Remédios, Mairiporã - SP</p></div></div>
+                    </div>
+                </div>
+                <div class="evento-map-wrapper">
+                    <div class="evento-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.917961914101!2d-46.52113722543329!3d-23.261838850684714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ceecca5fed8b2b%3A0x9acc98c808e44763!2sEspa%C3%A7o%20Carrier!5e0!3m2!1spt-BR!2sbr!4v1714493393282!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa do Espaço Carrier"></iframe>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Espa%C3%A7o+Carrier+Mairipor%C3%A3+SP" target="_blank" rel="noopener" class="btn-maps-directions">
+                        <i aria-hidden="true" class="fas fa-map-marker-alt"></i> Abrir no Google Maps
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mensagens" class="mural-section reveal">
+        <div class="container text-center">
+            <h2 class="section-title gold-shimmer">Deixe seu Recado</h2>
+            <div class="section-divider"></div>
+
+            <form id="msg-form" class="custom-form mural-form" novalidate>
+                <div id="msg-erros" class="form-error-summary" role="alert" tabindex="-1" hidden></div>
+                <div class="form-group">
+                    <label for="msg-nome">Nome e Sobrenome *</label>
+                    <input type="text" id="msg-nome" class="form-input" required placeholder="Seu Nome e Sobrenome" aria-describedby="msg-nome-erro" aria-invalid="false" maxlength="100" autocomplete="name">
+                    <p id="msg-nome-erro" class="form-error" hidden>Informe seu nome e sobrenome.</p>
+                </div>
+                <div class="form-group">
+                    <label for="msg-texto">Mensagem *</label>
+                    <textarea id="msg-texto" rows="4" class="form-input" required maxlength="300" placeholder="Escreva sua mensagem..." aria-describedby="msg-texto-erro char-count" aria-invalid="false"></textarea>
+                    <div id="char-count" class="char-counter" aria-live="polite">0 / 300</div>
+                    <p id="msg-texto-erro" class="form-error" hidden>Escreva sua mensagem para o casal.</p>
+                </div>
+                <button type="submit" class="btn-primary btn-submit"><i aria-hidden="true" class="far fa-paper-plane"></i> Enviar Mensagem</button>
+            </form>
+
+            <h3 class="mural-subtitle">Mural de Carinho</h3>
+            <div id="mural-container" class="mural-grid" data-limit="4">
+                <p><i aria-hidden="true" class="fas fa-spinner fa-spin"></i> Carregando mensagens...</p>
+            </div>
+
+            <div class="text-center mural-cta">
+                <a href="mural" class="btn-outline"><i aria-hidden="true" class="far fa-comments"></i> Ver todas as mensagens</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="rsvp" class="rsvp reveal african-pattern">
+        <div class="rsvp-bg"></div>
+        <div class="container rsvp-inner">
+            <div class="rsvp-header">
+                <i aria-hidden="true" class="fas fa-gem rsvp-icon"></i>
+                <h2 class="gold-shimmer">Confirmar Presença</h2>
+            </div>
+            <form id="rsvp-form" class="custom-form" novalidate>
+                <div id="rsvp-erros" class="form-error-summary" role="alert" tabindex="-1" hidden></div>
+                <div class="form-group radio-group-centered">
+                    <label>Confirmando a presença para um:</label>
+                    <div class="checkbox-group">
+                        <label class="custom-radio"><input type="radio" name="tipo_convidado" id="radio-adulto" value="Adulto" checked><span class="radiomark"></span> Adulto</label>
+                        <label class="custom-radio"><input type="radio" name="tipo_convidado" id="radio-crianca" value="Crianca"><span class="radiomark"></span> Criança / Adolescente</label>
+                    </div>
+                </div>
+
+                <div id="bloco-adulto" class="fade-in">
+                    <div class="form-group"><label for="nome-adulto"><i aria-hidden="true" class="far fa-user"></i> Nome e Sobrenome *</label><input type="text" id="nome-adulto" class="form-input" required placeholder="Seu Nome e Sobrenome" aria-describedby="nome-adulto-erro" aria-invalid="false" maxlength="120" autocomplete="name"><p id="nome-adulto-erro" class="form-error" hidden>Informe seu nome e sobrenome.</p></div>
+                </div>
+
+                <div id="bloco-crianca" class="bloco-crianca hidden">
+                    <div class="form-group"><label for="nome-crianca"><i aria-hidden="true" class="fas fa-child"></i> Nome da Criança/Adolescente *</label><input type="text" id="nome-crianca" class="form-input" placeholder="Nome e Sobrenome" aria-describedby="nome-crianca-erro" aria-invalid="false" maxlength="120"><p id="nome-crianca-erro" class="form-error" hidden>Informe o nome da criança/adolescente.</p></div>
+                    <div class="form-group">
+                        <label for="idade-crianca"><i aria-hidden="true" class="fas fa-birthday-cake"></i> Idade *</label>
+                        <select id="idade-crianca" class="form-input" aria-describedby="idade-crianca-erro" aria-invalid="false">
+                            <option value="" selected disabled>Selecione a idade</option>
+                            <option value="Menos de 1 ano">Menos de 1 ano</option>
+                            <option value="1 ano">1 ano</option>
+                            <option value="2 anos">2 anos</option>
+                            <option value="3 anos">3 anos</option>
+                            <option value="4 anos">4 anos</option>
+                            <option value="5 anos">5 anos</option>
+                            <option value="6 anos">6 anos</option>
+                            <option value="7 anos">7 anos</option>
+                            <option value="8 anos">8 anos</option>
+                            <option value="9 anos">9 anos</option>
+                            <option value="10 anos">10 anos</option>
+                            <option value="11 anos">11 anos</option>
+                            <option value="12 anos">12 anos</option>
+                            <option value="13 anos">13 anos</option>
+                            <option value="14 anos">14 anos</option>
+                            <option value="15 anos">15 anos</option>
+                            <option value="16 anos">16 anos</option>
+                            <option value="17 anos">17 anos</option>
+                        </select>
+                        <p id="idade-crianca-erro" class="form-error" hidden>Selecione a idade.</p>
+                    </div>
+                    <div class="form-group"><label for="nome-responsavel"><i aria-hidden="true" class="fas fa-user-shield"></i> Nome do Responsável *</label><input type="text" id="nome-responsavel" class="form-input" placeholder="Nome do adulto responsável" aria-describedby="nome-responsavel-erro" aria-invalid="false" maxlength="120"><p id="nome-responsavel-erro" class="form-error" hidden>Informe o nome do responsável.</p></div>
+                </div>
+
+                <div class="form-group">
+                    <label class="info-label-decorated">
+                        <i aria-hidden="true" class="fas fa-gem"></i>
+                        <span>Informações adicionais</span>
+                        <i aria-hidden="true" class="fas fa-gem"></i>
+                    </label>
+                    <div class="checkbox-group checkbox-group-vertical">
+                        <label class="custom-checkbox"><input type="checkbox" id="chk-vegetariano" value="Vegetariano(a) / Vegano(a)"><span class="checkmark"></span> <span class="chk-label"><i aria-hidden="true" class="fas fa-leaf pcd-icon"></i>Vegetariano(a) / Vegano(a)</span></label>
+                        <label class="custom-checkbox"><input type="checkbox" id="chk-gluten" value="Intolerância à Lactose"><span class="checkmark"></span> <span class="chk-label"><i aria-hidden="true" class="fas fa-jar pcd-icon"></i>Intolerância à Lactose</span></label>
+                        <label class="custom-checkbox"><input type="checkbox" id="chk-pcd" value="Necessidades Especiais"><span class="checkmark"></span> <span class="chk-label"><i aria-hidden="true" class="fas fa-wheelchair pcd-icon"></i>Necessidades Especiais</span></label>
+                    </div>
+                </div>
+
+                <div class="form-group"><label for="contato"><i aria-hidden="true" class="fab fa-whatsapp"></i> Telefone / WhatsApp *</label><input type="tel" id="contato" class="form-input" required placeholder="(11) 99999-9999" maxlength="15" aria-describedby="contato-erro" aria-invalid="false" autocomplete="tel" inputmode="tel"><p id="contato-erro" class="form-error" hidden>Informe um telefone/WhatsApp válido com DDD.</p></div>
+
+                <div class="form-group">
+                    <label class="custom-checkbox lgpd-consent">
+                        <input type="checkbox" id="lgpd-consent" aria-describedby="lgpd-erro" aria-invalid="false">
+                        <span class="checkmark"></span>
+                        Autorizo o envio dos meus dados para organização do evento.
+                    </label>
+                    <p id="lgpd-erro" class="form-error" hidden>É preciso autorizar o uso dos dados para confirmar presença.</p>
+                </div>
+
+                <button type="submit" class="btn-primary btn-submit"><i aria-hidden="true" class="fas fa-heart"></i> Confirmar Presença</button>
+
+                <div id="rsvp-success-action" class="hidden rsvp-success-box"></div>
+                <div id="rsvp-msg-action" class="hidden rsvp-success-box">
+                    <h3 class="rsvp-success-title">Deixe uma mensagem carinhosa para o Casal<span class="rsvp-heart"><i aria-hidden="true" class="far fa-comment-dots"></i></span></h3>
+                    <a href="#mensagens" class="btn-outline rsvp-success-link">Envie a Sua Mensagem</a>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section id="presentes" class="presentes reveal">
+        <div class="container text-center">
+            <h2 class="section-title gold-shimmer">Presentes</h2>
+            <div class="section-divider"></div>
+            <p class="presentes-desc">Não se preocupe em nos dar um presente. O nosso maior presente é a sua presença.</p>
+            <p class="presentes-desc-sub">Mas, se mesmo assim desejar nos presentear, aceitamos uma doação filantrópica via Pix, que será dividida igualmente entre as seguintes <strong class="gold-shimmer">instituições de caridade</strong>:</p>
+            <div class="instituicoes-card">
+                <ul class="instituicoes-list">
+                <li><i aria-hidden="true" class="fas fa-heart"></i> GRAAC</li>
+                <li><i aria-hidden="true" class="fas fa-heart"></i> Casa Transitória Fabiano de Cristo</li>
+                <li><i aria-hidden="true" class="fas fa-heart"></i> Casa Hope</li>
+                </ul>
+            </div>
+            <div class="pix-card" id="pix-card"></div>
+        </div>
+    </section>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script type="module" src="./src/js/pages/home.js"></script>
+</body>
+</html>

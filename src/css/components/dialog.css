@@ -1,0 +1,17 @@
+dialog.lightbox {
+    border: none; background: transparent; margin: auto; padding: 0;
+    overflow: visible; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.3s var(--ease-out-expo);
+}
+dialog.lightbox[open] { opacity: 1; pointer-events: auto; }
+dialog.lightbox::backdrop { background-color: rgba(0, 0, 0, 0.95); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); }
+dialog.lightbox img { max-height: 95vh; max-width: 95vw; object-fit: contain; box-shadow: 0 0 60px rgba(0,0,0,0.8); border-radius: 8px; cursor: zoom-in; transition: transform 0.3s var(--ease-out-expo); }
+dialog.lightbox img.zoomed { cursor: grab; object-fit: cover; max-height: none; max-width: none; width: 200%; height: 200%; }
+dialog.lightbox img.zoomed:active { cursor: grabbing; }
+dialog.lightbox button { position: absolute; background: none; border: none; color: white; cursor: pointer; transition: color 0.3s var(--ease-out-expo); min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; padding: 8px; touch-action: manipulation; }
+dialog.lightbox button:hover { color: hsl(var(--primary)); }
+/* ── Harden: anel ouro visível sobre backdrop noite ── */
+dialog.lightbox button:focus-visible { outline: 3px solid hsl(var(--gold-light)); outline-offset: 2px; border-radius: 6px; }
+.lightbox-close { top: 20px; right: 24px; font-size: 40px; line-height: 1; }
+.lightbox-prev { left: 16px; top: 50%; transform: translateY(-50%); font-size: 48px; }
+.lightbox-next { right: 16px; top: 50%; transform: translateY(-50%); font-size: 48px; }

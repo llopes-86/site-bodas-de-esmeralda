@@ -1,0 +1,133 @@
+.fotos { padding: 64px 20px; background-color: hsl(var(--background)); }
+.gallery-cta { margin-top: 40px; }
+
+/* ── Slideshow ── */
+.gallery-slideshow {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    aspect-ratio: 4/5;
+    max-width: 560px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.slideshow-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s var(--ease-out-expo);
+}
+
+.slideshow-slide {
+    flex: 0 0 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 0;
+    box-shadow: none;
+    aspect-ratio: auto;
+}
+.gallery-slideshow .gallery-item:hover {
+    transform: none;
+    box-shadow: none;
+}
+.gallery-slideshow .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Setas ocultas — navegação por dots + teclado + lightbox (após clique no card) */
+.slideshow-prev,
+.slideshow-next { display: none; }
+.slideshow-prev { left: 10px; }
+.slideshow-next { right: 10px; }
+
+/* Indicadores — visual 8px, alvo 44px via ::before (mesmo padrão forms.css) */
+.slideshow-dots {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    padding: 18px 18px;
+    z-index: 2;
+}
+.slideshow-dots .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: background 0.3s var(--ease-out-expo);
+    border: none;
+    padding: 0;
+    position: relative;
+}
+/* Área de toque 44px sem mudar o visual 8px — mesmo padrão de forms.css */
+.slideshow-dots .dot::before {
+    content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 44px; height: 44px;
+}
+/* ── Harden: dots como <button> sem estilo nativo ── */
+button.dot { appearance: none; -webkit-appearance: none; }
+button.dot:focus-visible { outline: 3px solid hsl(var(--gold-light)); outline-offset: 2px; }
+/* ── Harden: item da galeria operável por teclado ── */
+.gallery-item:focus-visible { outline: 3px solid hsl(var(--ring)); outline-offset: 2px; }
+.slideshow-dots .dot.active {
+    background: hsl(var(--primary));
+}
+
+/* Overlay de clique mantido */
+.slideshow-slide .gallery-overlay {
+    position: absolute; inset: 0; background-color: hsl(var(--night) / 0.45);
+    opacity: 0; transition: opacity 0.3s var(--ease-out-expo); display: flex; align-items: center; justify-content: center;
+}
+.slideshow-slide .gallery-overlay i { color: hsl(var(--primary)); font-size: 28px; }
+.slideshow-slide:hover .gallery-overlay { opacity: 1; }
+
+@media (max-width: 500px) {
+    .gallery-slideshow { aspect-ratio: 3/4; max-width: 100%; }
+    .slideshow-dots { gap: 16px; }
+}
+@media (pointer: coarse) {
+    .slideshow-dots { gap: 16px; }
+}
+
+/* ── Estilos base dos itens (galeria.html) ── */
+.gallery-item {
+    position: relative; overflow: hidden; border-radius: 12px; aspect-ratio: 1/1;
+    cursor: pointer; box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s var(--ease-out-expo);
+}
+.gallery-item:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.15); }
+.gallery-item:active { transform: scale(0.97); }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s var(--ease-out-quint); display: block; }
+.gallery-item:hover img { transform: scale(1.1); }
+.gallery-item .gallery-overlay {
+    position: absolute; inset: 0; background-color: hsl(var(--night) / 0.45);
+    opacity: 0; transition: opacity 0.3s var(--ease-out-expo); display: flex; align-items: center; justify-content: center;
+}
+.gallery-item .gallery-overlay i { color: hsl(var(--primary)); font-size: 28px; }
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+
+/* ── Galeria (galeria.html) ── */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+@media (max-width: 768px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; max-width: 100%; } }
+@media (max-width: 500px) { .gallery-grid { grid-template-columns: 1fr; max-width: 100%; } }
+
+.gallery-header { padding-top: 120px; text-align: center; }
+.gallery-header-desc { color: hsl(var(--muted-foreground)); max-width: 600px; margin: 0 auto; }
+.gallery-era { padding-top: 60px; padding-bottom: 60px; }
+.gallery-era-alt { background-color: hsl(var(--card)); }
+.gallery-era-last { padding-bottom: 64px; }
+.gallery-era-title { color: hsl(var(--primary-deep)); font-family: 'Plus Jakarta Sans', sans-serif; font-size: 24px; font-weight: 600; margin-bottom: 24px; padding-left: 0; border-left: none; }
+.gallery-era-title::after { content: ''; display: block; width: 56px; height: 2px; margin-top: 8px; border-radius: 999px; background: hsl(var(--primary-deep)); }

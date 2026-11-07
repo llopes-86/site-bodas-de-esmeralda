@@ -1,0 +1,205 @@
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; background-color: hsl(var(--background)); }
+body { font-family: 'DM Sans', sans-serif; background-color: hsl(var(--background)); color: hsl(var(--foreground)); overflow-x: hidden; -webkit-font-smoothing: antialiased; padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); padding-bottom: env(safe-area-inset-bottom); }
+/* P1 adapt: âncora não esconde título atrás da navbar fixa (72px mobile, 80px desktop) */
+section[id] { scroll-margin-top: 72px; }
+@media (min-width: 769px) {
+    section[id] { scroll-margin-top: 80px; }
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+.text-center { text-align: center; }
+.hidden { display: none !important; }
+/* Harden: guarda global — nenhum display de componente (flex/grid/block)
+   pode anular o atributo hidden. Quando JS remove hidden, display volta. */
+[hidden] { display: none !important; }
+
+/* ── Harden P1/P2: foco de teclado global — anel ouro (--ring + halo 3px) ── */
+:focus-visible {
+    outline: 3px solid hsl(var(--ring));
+    outline-offset: 2px;
+    border-radius: 6px;
+}
+/* Remove outline apenas quando mouse (mantém :focus-visible para teclado) */
+:focus:not(:focus-visible) { outline: none; }
+
+/* ── Skip-link "Pular para conteúdo" ── */
+.skip-link {
+    position: absolute; left: 16px; top: -60px; z-index: 100000;
+    background: hsl(var(--primary-deep)); color: hsl(var(--primary-foreground));
+    font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 14px;
+    padding: 12px 20px; border-radius: 8px; text-decoration: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    transition: top 0.2s var(--ease-out-expo);
+    min-height: 44px; display: inline-flex; align-items: center;
+}
+.skip-link:focus-visible { top: 12px; outline: 3px solid hsl(var(--gold-light)); outline-offset: 2px; }
+
+/* ── Texto só para leitor de tela + região viva do countdown ── */
+.visually-hidden {
+    position: absolute !important; width: 1px !important; height: 1px !important;
+    padding: 0 !important; margin: -1px !important; overflow: hidden !important;
+    clip: rect(0 0 0 0) !important; white-space: nowrap !important; border: 0 !important;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: hsl(var(--muted)); }
+::-webkit-scrollbar-thumb { background: hsl(var(--primary) / 0.4); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(var(--primary) / 0.6); }
+
+.section-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; letter-spacing: -0.025em; color: hsl(var(--primary-deep)); margin-bottom: 16px; }
+/* P1 a11y: shimmer restrito a display grande sobre noite; em título de seção claro, ouro vivo falha 4.5:1 — neutraliza para primary-deep sólido (5.2:1). */
+.section-title.gold-shimmer { background: none; -webkit-background-clip: border-box; background-clip: border-box; -webkit-text-fill-color: currentColor; color: hsl(var(--primary-deep)); animation: none; }
+
+.section-divider {
+    display: flex; align-items: center; width: 200px; height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 88 C25 65 10 50 10 35 C10 20 22 10 35 10 C42 10 48 14 50 18 C52 14 58 10 65 10 C78 10 90 20 90 35 C90 50 75 65 50 88Z' fill='%238b5d18'/%3E%3C/svg%3E");
+    background-position: center; background-repeat: no-repeat; background-size: 18px 18px;
+    margin: 0 auto 40px; border: none; opacity: 1;
+}
+.section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; }
+.section-divider::before { background: linear-gradient(to right, transparent, hsl(var(--primary-deep))); margin-right: 14px; }
+.section-divider::after { background: linear-gradient(to left, transparent, hsl(var(--primary-deep))); margin-left: 14px; }
+
+.african-pattern {
+    background-image: linear-gradient(45deg, transparent 40%, hsla(36, 70%, 45%, 0.05) 0, hsla(36, 70%, 45%, 0.05) 60%, transparent 0), linear-gradient(-45deg, transparent 40%, hsla(36, 70%, 45%, 0.05) 0, hsla(36, 70%, 45%, 0.05) 60%, transparent 0);
+    background-size: 30px 30px;
+}
+
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+
+@keyframes pageIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+body.page-in { animation: pageIn 0.5s var(--ease-out-expo); }
+
+.reveal {
+    opacity: 1; transform: translateY(0); transition: opacity 0.6s var(--ease-out-expo), transform 0.6s var(--ease-out-expo);
+}
+body.js-ready .reveal { opacity: 0; transform: translateY(20px); }
+body.js-ready .reveal.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 480px) {
+    .historia, .fotos, .evento, .mural-section, .rsvp, .presentes { padding: 40px 16px; }
+    .mural-section.mural-full { padding-top: 100px; }
+    .gallery-era { padding-top: 32px; padding-bottom: 32px; }
+    .gallery-era-last { padding-bottom: 48px; }
+    .gallery-header { padding-top: 100px; }
+    .gallery-header-desc { padding: 0 16px; }
+    .container { padding: 0 16px; }
+    .section-divider { margin-bottom: 32px; }
+}
+
+/* ── Splash Screen ── */
+.splash {
+    position: fixed; inset: 0; z-index: 99999;
+    background-color: hsl(var(--night));
+    display: flex; align-items: center; justify-content: center;
+    animation: splashFallback 0.01s 4s forwards;
+}
+@keyframes splashFallback { to { opacity: 0; visibility: hidden; pointer-events: none; } }
+.splash.fade-out {
+    animation: splashOut 0.6s var(--ease-out-expo) forwards;
+}
+@keyframes splashOut {
+    from { opacity: 1; }
+    to { opacity: 0; transform: scale(1.02); pointer-events: none; }
+}
+.splash-pattern {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(45deg, transparent 40%, hsla(36, 70%, 45%, 0.04) 0, hsla(36, 70%, 45%, 0.04) 60%, transparent 0), linear-gradient(-45deg, transparent 40%, hsla(36, 70%, 45%, 0.04) 0, hsla(36, 70%, 45%, 0.04) 60%, transparent 0);
+    background-size: 30px 30px;
+}
+.splash-content {
+    position: relative; z-index: 1; text-align: center;
+}
+.splash-gem {
+    font-size: 48px; color: var(--gem);
+    animation: gemGlow 1.5s var(--ease-out-quint) infinite;
+    display: block; margin-bottom: 20px;
+}
+@keyframes gemGlow {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+}
+.splash-names {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-weight: 800; margin-bottom: 12px;
+}
+.splash-sub {
+    color: hsl(var(--cream-ink)); font-size: 16px;
+    font-family: 'DM Sans', sans-serif; font-weight: 400;
+    letter-spacing: 0.5px;
+}
+.splash-bar {
+    width: 200px; height: 3px;
+    background: hsl(var(--night-line));
+    border-radius: 999px; margin: 24px auto 0;
+    overflow: hidden;
+}
+.splash-bar-fill {
+    width: 0; height: 100%;
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--gold-light)));
+    border-radius: 999px;
+    animation: barFill 2.5s var(--ease-out-quint) forwards;
+}
+@keyframes barFill {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.splash.quick-fade-out {
+    animation: splashOutQuick 0.2s var(--ease-out-expo) forwards;
+}
+@keyframes splashOutQuick {
+    from { opacity: 1; }
+    to { opacity: 0; transform: scale(1.02); pointer-events: none; }
+}
+
+#page-transition-overlay {
+    position: fixed; inset: 0; z-index: 99999;
+    background-color: hsl(var(--night));
+    opacity: 0; transition: opacity 0.3s var(--ease-out-expo);
+    pointer-events: all;
+}
+#page-transition-overlay.active { opacity: 1; }
+
+/* ── P1 a11y: prefers-reduced-motion — reduz movimento, preserva estado ──
+   Focal (shimmer/splash) vira opacidade instantânea; flip/slideshow/smooth-scroll
+   viram troca de estado sem deslocamento; feedback (hover/focus/toast) mantém
+   opacidade/cor. Hierarquia e legibilidade inalteradas. */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    /* Entradas espaciais viram estado final instantâneo (reveal + card/pix/rsvp) */
+    body.page-in, .reveal, body.js-ready .reveal, body.js-ready .reveal.visible,
+    .rsvp-success-box, .fade-in, .pix-card, .presentes.reveal.visible .pix-card,
+    .mural-grid:not([data-limit]) .mural-card {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        transition: opacity 0.01ms !important;
+    }
+    /* Loops não-essenciais desligados, estado final preservado */
+    .gold-shimmer, .btn-hero-rsvp, .hero-scroll-hint,
+    .scroll-up-btn i, .scroll-down-btn i, .rsvp-float-btn i, .splash-gem {
+        animation: none !important;
+        transform: none !important;
+    }
+    .splash, .splash.fade-out, .splash.quick-fade-out {
+        animation: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+    }
+    .splash-bar-fill { animation: none !important; width: 100% !important; }
+    /* Flip do mural: envelope sai, verso aparece sem giro 3D */
+    .mural-revealed .mural-card-flip-inner { animation: none !important; transform: none !important; }
+    .mural-card-envelope { display: none !important; }
+    .mural-card-back-wrapper { transform: none !important; }
+    .mural-revealed .mural-slide:nth-child(n) .mural-card-flip-inner { animation-delay: 0s !important; }
+    /* Slideshows: troca instantânea, sem deslize */
+    .slideshow-track, .mural-slideshow-track { transition: none !important; }
+    /* Feedback de erro sem shake: só outline */
+    .lgpd-shake { animation: none !important; transform: none !important; }
+    /* Hovers com lift viram só borda/cor */
+    .mural-card:hover, .gallery-item:hover, .rsvp-float-btn:hover { transform: none !important; }
+    .gallery-item:hover img { transform: none !important; }
+}

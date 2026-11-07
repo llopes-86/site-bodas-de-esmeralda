@@ -1,0 +1,11 @@
+# GrayMatter: memória local do agente, nunca versionar
+.graymatter/
+# Pacotes de deploy gerados (Prod/ Homolog/) — artefatos, nunca versionar
+Prod/*.zip
+Homolog/*.zip
+# Rascunhos e recibos do archify — só o HTML final vai pro repo
+.archify/
+docs/arquitetura.finalize.json
+docs/arquitetura.finalize-summary.json
+docs/arquitetura.browser-check.json
+docs/arquitetura.delivery.json

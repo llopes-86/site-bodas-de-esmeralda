@@ -1,0 +1,18 @@
+.notification-banner {
+    position: fixed; top: -120px; left: 50%; transform: translateX(-50%);
+    background-color: hsl(var(--background)); border: 1px solid hsl(var(--primary));
+    color: hsl(var(--foreground)); padding: 16px 24px; border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 16px;
+    z-index: 9999; transition: top 0.5s var(--ease-out-expo), opacity 0.3s var(--ease-out-expo);
+    width: 90%; max-width: 450px;
+    opacity: 0; visibility: hidden; pointer-events: none;
+}
+.notification-banner.show {
+    top: 40px;
+    opacity: 1; visibility: visible; pointer-events: auto;
+}
+.notification-banner.error { border-color: var(--destructive); }
+.notification-banner i { font-size: 32px; color: hsl(var(--primary)); }
+.notification-banner .notification-text h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 18px; color: hsl(var(--primary)); margin-bottom: 4px; }
+.close-notification { background: none; border: none; color: hsl(var(--foreground)); font-size: 28px; cursor: pointer; margin-left: auto; transition: color 0.3s var(--ease-out-expo); }
+.close-notification:hover { color: hsl(var(--primary)); }
