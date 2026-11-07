@@ -1,0 +1,40 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "graymatter": {
+      "command": [
+        "graymatter",
+        "--dir",
+        "C:\\Bodas\\V3\\Site\\.graymatter",
+        "mcp",
+        "serve"
+      ],
+      "enabled": true,
+      "type": "local"
+    },
+    "vectorcraft": {
+      "command": [
+        "C:\\Bodas\\V3\\Site\\diagrama\\tools\\vectorcraft\\vectorcraft-cli.exe",
+        "mcp",
+        "--automation-read-root",
+        "C:\\Bodas\\V3\\Site",
+        "--automation-write-root",
+        "C:\\Bodas\\V3\\Site\\diagrama\\out"
+      ],
+      "enabled": true,
+      "type": "local"
+    },
+    "effectcraft": {
+      "command": [
+        "C:\\Bodas\\V3\\Site\\diagrama\\tools\\effectcraft\\effectcraft-cli.exe",
+        "mcp",
+        "--automation-read-root",
+        "C:\\Bodas\\V3\\Site",
+        "--automation-write-root",
+        "C:\\Bodas\\V3\\Site\\diagrama\\out"
+      ],
+      "enabled": true,
+      "type": "local"
+    }
+  }
+}

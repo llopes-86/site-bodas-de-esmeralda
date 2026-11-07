@@ -9,3 +9,7 @@ docs/arquitetura.finalize.json
 docs/arquitetura.finalize-summary.json
 docs/arquitetura.browser-check.json
 docs/arquitetura.delivery.json
+# Spike de diagramas: binários e saídas locais (VectorCraft/EffectCraft), nunca versionar
+diagrama/tools/
+diagrama/work/
+diagrama/out/

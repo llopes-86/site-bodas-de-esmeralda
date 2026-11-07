@@ -37,13 +37,11 @@ python -m http.server 8000
 
 ## Arquitetura
 
-Diagrama interativo gerado com archify a partir do código — **rodando live**:
+Diagrama interativo gerado com archify a partir do código (abrir localmente):
 
-👉 **[Abrir arquitetura interativa](https://llopes-86.github.io/site-bodas-de-esmeralda/arquitetura.html)**
+![Arquitetura do site (animada, ícones reais)](docs/arquitetura-animada-v2.gif)
 
-[![Arquitetura do site](docs/arquitetura-preview.png)](https://llopes-86.github.io/site-bodas-de-esmeralda/arquitetura.html)
-
-*(Arquivo também disponível em [`docs/arquitetura.html`](docs/arquitetura.html) para abrir localmente.)*
+*(GIF animado v2, com os ícones reais de cada stack (VectorCraft + EffectCraft); v1 em [`docs/arquitetura-animada.gif`](docs/arquitetura-animada.gif). O diagrama interativo fica em [`docs/arquitetura.html`](docs/arquitetura.html) e o preview estático em [`docs/arquitetura-preview.png`](docs/arquitetura-preview.png).)*
 
 Fluxo em resumo: visitante → **nginx** (estático + CSP + rate-limit) → páginas; o JS chama **PocketBase** via `/api/pb` (RSVP/mural) e **Umami** via `/a/t`; CDNs servem fontes/ícones/mapas; a cada RSVP, um hook dispara **Gotify**.
 
@@ -53,7 +51,7 @@ Fluxo em resumo: visitante → **nginx** (estático + CSP + rate-limit) → pág
 - [x] Mural com moderação (`Pendente` → `Aprovado`), Pix/QR, countdown, a11y
 - [x] Encerramento do RSVP com aviso reversível (`hidden`), v1.15.11
 - [ ] Página de confirmação pós-evento (fotos da festa)
-- [x] GitHub Pages servindo a arquitetura interativa (`docs/`)
+- [x] Arquitetura interativa versionada em `docs/` (abrir localmente)
 
 ## Deploy
 
