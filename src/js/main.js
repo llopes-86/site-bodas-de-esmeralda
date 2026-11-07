@@ -240,7 +240,8 @@ export function initCore() {
 
     renderNotificationBanner();
     renderScrollNav();
-    renderFloatBtn();
+    // RSVP encerrado em 06/11/2026 — reativar removendo o comentario abaixo.
+    // renderFloatBtn();
     renderFooter();
     renderLightbox();
     renderMessageModal();

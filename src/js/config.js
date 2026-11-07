@@ -32,4 +32,4 @@ export const UMAMI_WEBSITE_ID = '2de5798d-49a7-49f1-aa82-80d664478215';
 // MAJOR: quebra compatibilidade (contrato Sheets/PocketBase, fluxo RSVP, deploy/nginx).
 // MINOR: feature compativel (nova secao, srcset, a11y, motion).
 // PATCH: fix (contraste, typo, raio, copy).
-export const APP_VERSION = '1.15.10';
+export const APP_VERSION = '1.15.11';
